@@ -37,19 +37,38 @@ body{
     font-size: 27px;
     font-weight: bold;
     border-radius: 5px 5px 5px 5px ;
+    color: #fff;
 }
 
-.button{
+.currentOutput{
+    font-size: 35px;
+    opacity: .9;
+}
+
+.button, .number, .operant{
     opacity: 90%;
     background-color: rgba(0, 0, 0, 0.432);
     font-size: 27px;
     border-radius: 5px 5px 5px 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .button:hover{
     background-color: white;
 }
 
-.equals{
+.button:active{
+    background-color: white;
+}
+
+.button.number{
+    font-weight: bolder;
+}
+
+#equals{
     grid-area: 6/3/6/span 2;
+}
+
+.modulo{
+    grid-area: 2/3/2/4;
 }
