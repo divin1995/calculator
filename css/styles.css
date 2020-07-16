@@ -20,7 +20,7 @@ body{
 .calculator-grid{    
     display: grid;
     grid-template-columns: repeat(4, 100px);
-    grid-gap: 5px;
+    grid-gap: 7px;
     grid-template-rows: minmax(120px, auto) repeat(5, 100px);
 }
 
@@ -55,10 +55,18 @@ body{
 
 .button:hover{
     background-color: white;
+    opacity: 80%;
 }
 
 .button:active{
     background-color: white;
+    box-shadow: 0 1px #666;
+    transform: translateY(4px);
+
+}
+
+.button:focus{
+    outline: none;
 }
 
 .button.number{

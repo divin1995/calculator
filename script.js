@@ -7,7 +7,6 @@ const backspace = document.querySelector("#backspace");
 const buttons = document.querySelectorAll(".button");
 
 var includeOnceArray = ['+', '-', '*', '/', '.', '%'];
-var operant = "+-*/.%";
 number.forEach(button => {
     button.addEventListener('click', ()=> {
         let content = button.getAttribute('data-num');
@@ -19,23 +18,21 @@ number.forEach(button => {
         {
             if(includeOnceArray.includes(lastChar))
             {
-                if(lastChar === content)
+                if(!(lastChar === content))
                 {
-                    console.log("same as the last last operant");
-                }
-                else
-                {
-                    currentOutput.textContent = currentTextOutput.substring(0, currentTextOutput.length-1) + content;                
+                    currentOutput.textContent = currentTextOutput.substring(0, currentTextOutput.length-1) + content;
                 }
             }
-            else{
+            else
+            {
                 currentOutput.textContent += content;
             }            
         }
-        else{
+        else
+        {
             if(currentOutput.textContent == "0" && currentOutput.textContent.length == 1)
             {
-                currentOutput.textContent = currentTextOutput.substring(0, currentTextOutput.length-1) + content;                
+                currentOutput.textContent = currentTextOutput.substring(0, currentTextOutput.length-1) + content;
             }
             else
             {
@@ -70,7 +67,7 @@ window.addEventListener("keydown", (e) => {
     switch(e.key)
     {
         case "0":
-            document.getElementById(e.key).click();            
+            document.getElementById(e.key).click();
             break;
         case "1":
             document.getElementById(e.key).click();
