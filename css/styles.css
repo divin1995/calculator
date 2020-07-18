@@ -7,13 +7,15 @@
 }
 
 body{
-    margin-top: 50px;
-    padding-top: 50px;
+    margin: 0;
+    padding-top: 100px;
     height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     background: linear-gradient(to right, #00AAFF, #00FF6C);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -22,6 +24,7 @@ body{
     grid-template-columns: repeat(4, 100px);
     grid-gap: 7px;
     grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    justify-content: center;
 }
 
 .output{
@@ -45,7 +48,7 @@ body{
     opacity: .9;
 }
 
-.button, .number, .operant{
+.number, .operant{
     opacity: 90%;
     background-color: rgba(0, 0, 0, 0.432);
     font-size: 27px;
@@ -53,30 +56,65 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.button:hover{
-    background-color: white !important;
-    opacity: 80%;
-}
-
-.button:active{
-    background-color: white !important;
-    box-shadow: 0 1px #666;
-    transform: translateY(4px);
-
-}
-
-.button:focus{
-    outline: none;
-}
-
-.button.number{
-    font-weight: bolder;
-}
-
 #equals{
     grid-area: 6/3/6/span 2;
+    opacity: 90%;
+    background-color: rgba(0, 0, 0, 0.432);
+    font-size: 27px;
+    border-radius: 5px 5px 5px 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#clearAll, #backspace{
+    opacity: 90%;
+    background-color: rgba(0, 0, 0, 0.432);
+    font-size: 27px;
+    border-radius: 5px 5px 5px 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .modulo{
     grid-area: 2/3/2/4;
 }
+
+/* Ripple effect */
+button {
+    background-position: center;
+    transition: background 0.5s;
+  }
+  button:hover {
+    background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+  }
+  button:active {
+    background-color: #6eb9f7;
+    background-size: 100%;
+    transition: background 0s;
+  }
+  
+  /* Button style */
+  button {
+    border: none;
+    padding: 12px 18px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+    background-color: #2196f3;
+    box-shadow: 0 0 4px #999;
+    outline: none;    
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  /*Desktop View*/
+@media (min-width: 992px) {
+
+}
+
+/*tablet View*/
+@media (min-width: 768px) and (max-width: 991px){
+ 
+}
+
+/*Mobile View*/
+@media (max-width: 767px) {
+}
+    

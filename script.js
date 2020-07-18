@@ -4,9 +4,9 @@ const equals = document.querySelector("#equals");
 const number = document.querySelectorAll(".number, .operant");
 const clearAll = document.querySelector("#clearAll");
 const backspace = document.querySelector("#backspace");
-const buttons = document.querySelectorAll(".button");
 
 var includeOnceArray = ['+', '-', '*', '/', '.', '%'];
+var operantArray = ['+', '-', '*', '/', '%'];
 number.forEach(button => {
     button.addEventListener('click', ()=> {
         let content = button.getAttribute('data-num');
@@ -47,16 +47,25 @@ clearAll.addEventListener('click', () => {
     previousOutput.textContent = "";
 })
 
-equals.addEventListener('click', () => {
+equals.addEventListener('click', () => {    
     let result = currentOutput.textContent;
-    previousOutput.textContent = result +" =";
-    currentOutput.textContent = eval(result);
-    
+    let lastChar = result.substring(result.length -1); 
+    if(operantArray.includes(lastChar))
+    {
+        alert("Add a value to evaluate with!");
+    }
+    else{
+        previousOutput.textContent = result +" =";
+        currentOutput.textContent = eval(result);
+    }    
 })
 
 backspace.addEventListener('click', () => {
     let output = currentOutput.textContent;
-    currentOutput.textContent = output.substring(0, output.length-1);
+    if(output !== '0')
+    {
+        currentOutput.textContent = output.substring(0, output.length-1);
+    }
 })
 
 window.addEventListener("keydown", (e) => {
@@ -68,28 +77,28 @@ window.addEventListener("keydown", (e) => {
     {        
         case "Enter":
             document.getElementById("equals").click();
-            document.getElementById("equals").style.backgroundColor = "white";   
+            document.getElementById("equals").style.backgroundColor = "#2196f3";   
             window.addEventListener("keyup", ()=>{
                 document.getElementById("equals").style.backgroundColor = "rgba(0, 0, 0, 0.432)"; 
                 })   
             break;
         case "Backspace":
             document.getElementById("backspace").click();
-            document.getElementById("backspace").style.backgroundColor = "white";   
+            document.getElementById("backspace").style.backgroundColor = "#2196f3";   
             window.addEventListener("keyup", ()=>{
                 document.getElementById("backspace").style.backgroundColor = "rgba(0, 0, 0, 0.432)"; 
                 })   
             break;
         case "Escape":
             document.getElementById("clearAll").click();
-            document.getElementById("clearAll").style.backgroundColor = "white";   
+            document.getElementById("clearAll").style.backgroundColor = "#2196f3";   
             window.addEventListener("keyup", ()=>{
                 document.getElementById("clearAll").style.backgroundColor = "rgba(0, 0, 0, 0.432)"; 
                 })   
             break;
         default:
             document.getElementById(e.key).click();
-            document.getElementById(e.key).style.backgroundColor = "white";   
+            document.getElementById(e.key).style.backgroundColor = "#2196f3";   
             window.addEventListener("keyup", (e)=>{
                 document.getElementById(e.key).style.backgroundColor = "rgba(0, 0, 0, 0.432)"; 
                 })              
