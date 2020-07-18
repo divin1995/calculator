@@ -65,60 +65,33 @@ window.addEventListener("keydown", (e) => {
         return;
     }
     switch(e.key)
-    {
-        case "0":
-            document.getElementById(e.key).click();
-            break;
-        case "1":
-            document.getElementById(e.key).click();
-            break;
-        case "2":
-            document.getElementById(e.key).click();
-            break;
-        case "3":
-            document.getElementById(e.key).click();
-            break;
-        case "4":
-            document.getElementById(e.key).click();
-            break;
-        case "5":
-            document.getElementById(e.key).click();
-            break;
-        case "6":
-            document.getElementById(e.key).click();
-            break;
-        case "7":
-            document.getElementById(e.key).click();
-            break;
-        case "8":
-            document.getElementById(e.key).click();
-            break;
-        case "9":
-            document.getElementById(e.key).click();
-            break;
-        case "/":
-            document.getElementById(e.key).click();
-            break;
-        case "*":
-            document.getElementById(e.key).click();
-            break;
-        case "-":
-            document.getElementById(e.key).click();
-            break;
-        case "+":
-            document.getElementById(e.key).click();
-            break;
-        case "%":
-            document.getElementById(e.key).click();
-            break;
+    {        
         case "Enter":
             document.getElementById("equals").click();
+            document.getElementById("equals").style.backgroundColor = "white";   
+            window.addEventListener("keyup", ()=>{
+                document.getElementById("equals").style.backgroundColor = "rgba(0, 0, 0, 0.432)"; 
+                })   
             break;
         case "Backspace":
             document.getElementById("backspace").click();
+            document.getElementById("backspace").style.backgroundColor = "white";   
+            window.addEventListener("keyup", ()=>{
+                document.getElementById("backspace").style.backgroundColor = "rgba(0, 0, 0, 0.432)"; 
+                })   
             break;
         case "Escape":
             document.getElementById("clearAll").click();
+            document.getElementById("clearAll").style.backgroundColor = "white";   
+            window.addEventListener("keyup", ()=>{
+                document.getElementById("clearAll").style.backgroundColor = "rgba(0, 0, 0, 0.432)"; 
+                })   
             break;
+        default:
+            document.getElementById(e.key).click();
+            document.getElementById(e.key).style.backgroundColor = "white";   
+            window.addEventListener("keyup", (e)=>{
+                document.getElementById(e.key).style.backgroundColor = "rgba(0, 0, 0, 0.432)"; 
+                })              
     }
 })

@@ -54,12 +54,12 @@ body{
 }
 
 .button:hover{
-    background-color: white;
+    background-color: white !important;
     opacity: 80%;
 }
 
 .button:active{
-    background-color: white;
+    background-color: white !important;
     box-shadow: 0 1px #666;
     transform: translateY(4px);
 
