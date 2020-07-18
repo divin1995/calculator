@@ -19,13 +19,7 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.calculator-grid{    
-    display: grid;
-    grid-template-columns: repeat(4, 100px);
-    grid-gap: 7px;
-    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
-    justify-content: center;
-}
+
 
 .output{
     display: flex;
@@ -48,7 +42,7 @@ body{
     opacity: .9;
 }
 
-.number, .operant{
+.number, .operant, #clearAll, #backspace{
     opacity: 90%;
     background-color: rgba(0, 0, 0, 0.432);
     font-size: 27px;
@@ -65,56 +59,77 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-#clearAll, #backspace{
-    opacity: 90%;
-    background-color: rgba(0, 0, 0, 0.432);
-    font-size: 27px;
-    border-radius: 5px 5px 5px 5px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
 .modulo{
     grid-area: 2/3/2/4;
 }
 
 /* Ripple effect */
 button {
-    background-position: center;
-    transition: background 0.5s;
-  }
-  button:hover {
-    background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
-  }
-  button:active {
-    background-color: #6eb9f7;
-    background-size: 100%;
-    transition: background 0s;
-  }
-  
-  /* Button style */
-  button {
+    background-position: center !important;
+    transition: background 0.5s !important;
+}
+button:hover, #backspace:hover, #clearAll:hover, #equals:hover{
+background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000% !important;
+}
+button:active, #backspace:active, #clearAll:active, #equals:active{
+background-color: #6eb9f7 !important;
+background-size: 100% !important;
+transition: background 0s !important;
+}
+
+button {
     border: none;
-    padding: 12px 18px;
-    font-size: 16px;
     cursor: pointer;
     color: white;
     background-color: #2196f3;
     box-shadow: 0 0 4px #999;
     outline: none;    
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
+}
+
   
   /*Desktop View*/
 @media (min-width: 992px) {
+    .calculator-grid{    
+        display: grid;
+        grid-template-columns: repeat(4, 100px);
+        grid-gap: 7px;
+        grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+        justify-content: center;    
+    }
 
+    .number, .operant, #equals, #clearAll, #backspace, .previousOutput, .currentOutput{
+        font-size: 27px;
+    }
 }
 
 /*tablet View*/
 @media (min-width: 768px) and (max-width: 991px){
- 
+    .calculator-grid{    
+        display: grid;
+        grid-template-columns: repeat(4, 75px);
+        grid-gap: 7px;
+        grid-template-rows: minmax(120px, auto) repeat(5, 75px);
+        justify-content: center;    
+    }
+
+    .number, .operant, #equals, #clearAll, #backspace, .previousOutput, .currentOutput{
+        font-size: 22px;
+    }
 }
 
 /*Mobile View*/
 @media (max-width: 767px) {
+    .calculator-grid{    
+        display: grid;
+        grid-template-columns: repeat(4, 50px);
+        grid-gap: 7px;
+        grid-template-rows: minmax(100px, auto) repeat(5, 50px);
+        justify-content: center;    
+    }
+
+    .number, .operant, #equals, #clearAll, #backspace, .previousOutput, .currentOutput{
+        font-size: 20px;
+    }
 }
     
