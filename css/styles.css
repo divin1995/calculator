@@ -126,6 +126,8 @@ button {
         grid-gap: 7px;
         grid-template-rows: minmax(100px, auto) repeat(5, 50px);
         justify-content: center;    
+        margin-left: 15px;
+        margin-right: 15px;
     }
 
     .number, .operant, #equals, #clearAll, #backspace, .previousOutput, .currentOutput{
